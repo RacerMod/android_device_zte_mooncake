@@ -8,4 +8,5 @@ $(call inherit-product, device/zte/mooncake/device.mk)
 PRODUCT_NAME := mooncake
 PRODUCT_DEVICE := mooncake
 PRODUCT_BRAND := ZTE
-PRODUCT_MODEL := ZTE Racer
+PRODUCT_MANUFACTURER := ZTE
+PRODUCT_MODEL := Racer
