@@ -63,6 +63,10 @@ DISABLE_DEXPREOPT := false
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
+# Enable repeatable keys in CWM
+PRODUCT_PROPERTY_OVERRIDES += \
+        ro.cwm.enable_key_repeat=true
+
 PRODUCT_COPY_FILES := \
         device/zte/mooncake/prebuilt/init.mooncake.rc:root/init.mooncake.rc \
         device/zte/mooncake/prebuilt/init.mooncake.usb.rc:root/init.mooncake.usb.rc \
