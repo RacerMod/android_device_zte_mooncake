@@ -26,6 +26,8 @@ USE_CAMERA_STUB := false
 
 TARGET_NO_BOOTLOADER := true
 
+BOARD_LDPI_RECOVERY := true
+
 TARGET_PREBUILT_RECOVERY_KERNEL := device/zte/mooncake/recovery_kernel
 
 BOARD_KERNEL_CMDLINE := androidboot.hardware=mooncake console=null
