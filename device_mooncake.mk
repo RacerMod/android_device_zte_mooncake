@@ -62,7 +62,8 @@ $(call inherit-product-if-exists, vendor/zte/mooncake/mooncake-vendor.mk)
 DISABLE_DEXPREOPT := false
 
 PRODUCT_COPY_FILES += \
-    device/zte/mooncake/qwerty.kl:system/usr/keylayout/qwerty.kl
+    device/zte/mooncake/qwerty.kl:system/usr/keylayout/qwerty.kl \
+    device/zte/mooncake/mooncake-keypad.kl:system/usr/keylayout/mooncake-keypad.kl
 
 # fstab
 PRODUCT_COPY_FILES += \
