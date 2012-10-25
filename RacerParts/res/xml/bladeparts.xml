@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- USB Charging -->
+    <CheckBoxPreference
+        android:key="usb_charging"
+        android:title="@string/usb_charging_title_head"
+        android:summary="@string/usb_charging_summary_head"
+        android:defaultValue="true" />
+    <CheckBoxPreference
+        android:key="ts_zoomhack"
+        android:title="@string/ts_zoomhack_title_head"
+        android:summary="@string/ts_zoomhack_summary_head"
+        android:defaultValue="true" />
+    <!-- Buttons light  
+    <CheckBoxPreference
+        android:key="btn_lights"
+        android:title="@string/btn_lights_title_head"
+        android:summary="@string/btn_lights_summary_head"
+        android:defaultValue="true" /-->
+    <!-- Haptic feedback  
+    <CheckBoxPreference
+        android:key="haptic_feedback"
+        android:title="@string/haptic_feedback_title_head"
+        android:summary="@string/haptic_feedback_summary_head"
+        android:defaultValue="true" /-->
+</PreferenceScreen>

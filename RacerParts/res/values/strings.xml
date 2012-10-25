@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name="app_name">ZTE Racer Settings</string>
+        <string name="usb_charging_title_head">USB Charging</string>
+        <string name="usb_charging_summary_head">Enable/Disable charging</string>
+        <string name="ts_zoomhack_title_head">Pinch Zoom</string>
+        <string name="ts_zoomhack_summary_head">Enable/Disable pinch zoom</string>
+        <string name="btn_lights_title_head">Buttons backlight</string>
+        <string name="btn_lights_summary_head">Enable/Disable backlight</string>
+        <string name="haptic_feedback_title_head">Haptic feedback</string>
+        <string name="haptic_feedback_summary_head">Enable/Disable haptic feedback</string>
+</resources>
