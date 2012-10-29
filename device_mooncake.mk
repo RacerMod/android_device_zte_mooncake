@@ -61,9 +61,11 @@ $(call inherit-product-if-exists, vendor/zte/mooncake/mooncake-vendor.mk)
 
 DISABLE_DEXPREOPT := false
 
+# Keypad
 PRODUCT_COPY_FILES += \
     device/zte/mooncake/qwerty.kl:system/usr/keylayout/qwerty.kl \
-    device/zte/mooncake/mooncake-keypad.kl:system/usr/keylayout/mooncake-keypad.kl
+    device/zte/mooncake/mooncake-keypad.kl:system/usr/keylayout/mooncake-keypad.kl \
+    device/zte/mooncake/mooncake-keypad.kcm.bin:system/usr/keychars/mooncake-keypad.kl
 
 # fstab
 PRODUCT_COPY_FILES += \
@@ -97,7 +99,7 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.light.xml:system/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
-#Kernel Modules
+# Kernel Modules
 PRODUCT_COPY_FILES += \
     device/zte/mooncake/prebuilt/ar6000.ko:system/wifi/ar6000.ko \
     device/zte/mooncake/prebuilt/cifs.ko:system/lib/modules/2.6.35.7-perf+/cifs.ko \
@@ -105,7 +107,7 @@ PRODUCT_COPY_FILES += \
     device/zte/mooncake/prebuilt/lzo_compress.ko:system/lib/modules/2.6.35.7-perf+/lzo_compress.ko \
     device/zte/mooncake/prebuilt/lzo_decompress.ko:system/lib/modules/2.6.35.7-perf+/lzo_decompress.ko
 
-#WiFi firmware
+# WiFi firmware
 PRODUCT_COPY_FILES += \
     device/zte/mooncake/firmware/regcode:system/wifi/regcode \
     device/zte/mooncake/firmware/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \
@@ -115,9 +117,13 @@ PRODUCT_COPY_FILES += \
     device/zte/mooncake/firmware/eeprom.bin:system/wifi/eeprom.bin \
     device/zte/mooncake/firmware/eeprom.data:system/wifi/eeprom.data
 
-#Media profile
+# Media profile
 PRODUCT_COPY_FILES += \
     device/zte/mooncake/media_profiles.xml:system/etc/media_profiles.xml
+
+# Screen calibration
+PRODUCT_COPY_FILES += \
+    device/zte/mooncake/prebuilt/pointercal:system/etc/pointercal
 
 PRODUCT_PROPERTY_OVERRIDES := \
     keyguard.no_require_sim=true \
@@ -135,7 +141,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.lcd_density=120 \
-    ro.sf.hwrotation=0
+    debug.sf.hw=0 \
+    ro.sf.hwrotation=0 \
+    persist.sys.rotationanimation=false
 
 # Mooncake uses low and medium-density artwork where available
 PRODUCT_LOCALES += ldpi mdpi
