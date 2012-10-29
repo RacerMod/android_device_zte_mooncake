@@ -44,7 +44,6 @@ PRODUCT_PACKAGES += \
     SpareParts \
     Development \
     Term \
-    gralloc.mooncake \
     copybit.mooncake \
     gps.mooncake \
     lights.mooncake \
@@ -55,6 +54,7 @@ PRODUCT_PACKAGES += \
     abtfilt \
     RacerParts \
     dexpreopt
+#    gralloc.mooncake \
 
 # proprietary side of the device
 $(call inherit-product-if-exists, vendor/zte/mooncake/mooncake-vendor.mk)
@@ -116,6 +116,10 @@ PRODUCT_COPY_FILES += \
     device/zte/mooncake/firmware/device.bin:system/wifi/device.bin \
     device/zte/mooncake/firmware/eeprom.bin:system/wifi/eeprom.bin \
     device/zte/mooncake/firmware/eeprom.data:system/wifi/eeprom.data
+
+# gralloc
+PRODUCT_COPY_FILES += \
+    device/zte/mooncake/prebuilt/gralloc.mooncake.so:system/lib/hw/gralloc.mooncake.so
 
 # Media profile
 PRODUCT_COPY_FILES += \
