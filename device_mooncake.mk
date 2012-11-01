@@ -101,44 +101,6 @@ PRODUCT_LOCALES += ldpi mdpi
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-# This should not be needed but on-screen keyboard uses the wrong density without it.
-PRODUCT_PROPERTY_OVERRIDES += \
-    qemu.sf.lcd_density=120 
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    rild.libpath=/system/lib/libril-qc-1.so \
-    rild.libargs=-d /dev/smd0
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.lockprof.threshold=500 \
-    dalvik.vm.dexopt-flags=m=y \
-    dalvik.vm.heapsize=32m \
-    dalvik.vm.execution-mode=int:jit \
-    dalvik.vm.dexopt-data-only=1
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.sf.lcd_density=120 \
-    ro.sf.hwrotation=0
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    wifi.interface=wlan0 \
-    wifi.supplicant_scan_interval=180 \
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.com.android.dataroaming=false \
-    keyguard.no_require_sim=true \
-    ro.com.android.dateformat=dd-MM-yyyy \
-    ro.ril.hsxpa=2 \
-    ro.ril.gprsclass=10 \
-    ro.build.baseband_version=P729BB01 \
-    ro.telephony.default_network=0 \
-    ro.telephony.call_ring.multiple=false \
-    ro.com.google.locationfeatures=1 \
-    ro.setupwizard.enable_bypass=1 \
-    ro.media.dec.jpeg.memcap=20000000 \
-    ro.opengles.version=131072
-
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=0 \
-    persist.sys.rotationanimation=false \
-    ro.compcache.default=0
+    persist.sys.rotationanimation=false
