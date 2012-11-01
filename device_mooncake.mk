@@ -61,7 +61,7 @@ PRODUCT_COPY_FILES += \
 # WLAN + BT
 PRODUCT_COPY_FILES += \
     device/zte/mooncake/prebuilt/etc/init.bt.sh:system/etc/init.bt.sh \
-    device/zte/mooncake/prebuilt/etc/init.qcom.fm.sh:system/etc/init.qcom.fm.sh \
+    device/zte/mooncake/prebuilt/etc/init.qcom.bt.sh:system/etc/init.qcom.bt.sh \
     device/zte/mooncake/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     device/zte/mooncake/prebuilt/etc/wifi/hostapd.conf:system/etc/wifi/hostapd.conf \
     device/zte/mooncake/prebuilt/etc/dhcpd/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf
