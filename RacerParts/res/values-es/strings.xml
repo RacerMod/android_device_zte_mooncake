@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+        <string name="app_name">Ajustes ZTE Racer</string>
+        <string name="usb_charging_title_head">Carga vía USB</string>
+        <string name="usb_charging_summary_head">Habilitar/Deshabilitar carga vía USB</string>
+        <string name="ts_zoomhack_title_head">Pinch Zoom</string>
+        <string name="ts_zoomhack_summary_head">Habilitar/Deshabilitar pinch zoom</string>
+</resources>
