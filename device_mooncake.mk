@@ -100,7 +100,3 @@ PRODUCT_LOCALES += ldpi mdpi
 
 # we have enough storage space to hold precise GC data
 PRODUCT_TAGS += dalvik.gc.type-precise
-
-PRODUCT_PROPERTY_OVERRIDES += \
-    debug.sf.hw=0 \
-    persist.sys.rotationanimation=false
