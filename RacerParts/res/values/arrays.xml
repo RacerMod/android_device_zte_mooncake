@@ -9,11 +9,11 @@
       <item>Disabled</item>
    </string-array>
    <string-array name="gesture_pressure_values">
-      <item>1000</item>
-      <item>1100</item>
-      <item>1200</item>
-      <item>1300</item>
-      <item>1400</item>
+      <item>1175</item>
+      <item>1275</item>
+      <item>1375</item>
+      <item>1475</item>
+      <item>1575</item>
       <item>20000</item>
    </string-array>
 
@@ -26,11 +26,11 @@
       <item>Disabled</item>
    </string-array>
    <string-array name="gesture_blindspot_values">
-      <item>25</item>
-      <item>50</item>
-      <item>100</item>
-      <item>150</item>
-      <item>200</item>
+      <item>10</item>
+      <item>15</item>
+      <item>30</item>
+      <item>60</item>
+      <item>120</item>
       <item>0</item>
    </string-array>
 </resources>
