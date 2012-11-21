@@ -134,12 +134,14 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/hw/gralloc.mooncake.so -d .
 
 # All the blobs necessary for mooncake
 
+include device/zte/mooncake/BoardConfig.mk
+
 # AKMD
-ifeq ($(SENSORS_COMPASS_AK8973),true)
+ifeq ($(echo $)(SENSORS_COMPASS_AK8973),true)
 PRODUCT_COPY_FILES += \
     vendor/zte/__DEVICE__/proprietary/bin/akmd2:system/bin/akmd2
 else
-ifeq ($(SENSORS_COMPASS_AK8962),true)
+ifeq ($(echo $)(SENSORS_COMPASS_AK8962),true)
 PRODUCT_COPY_FILES += \
     vendor/zte/__DEVICE__/proprietary/bin/akmd8962:system/bin/akmd8962
 endif # SENSORS_COMPASS_AK8962
