@@ -27,13 +27,6 @@
 	android:entries="@array/gesture_blindspot_array"
 	android:entryValues="@array/gesture_blindspot_values" />
 
-    <!-- Pinch zoom -->
-    <CheckBoxPreference
-        android:key="ts_zoomhack"
-        android:title="@string/ts_zoomhack_title_head"
-        android:summary="@string/ts_zoomhack_summary_head"
-        android:defaultValue="true" />
-
     <!-- USB Charging -->
     <CheckBoxPreference
 	android:key="usb_charging"

@@ -11,9 +11,6 @@
         <string name="gesture_blindspot_title_head">Τυφλό σημείο χειρονομίας</string>
         <string name="gesture_blindspot_summary_head">Τυφλό σημείο μεταξύ απλού αγγίγματος και εξομοίωσης χειρονομιας.</string>
 
-        <string name="ts_zoomhack_title_head">Pinch Zoom</string>
-        <string name="ts_zoomhack_summary_head">Ενεργοποίηση/Απενεργοποίηση</string>
-
         <string name="usb_charging_title_head">Φόρτιση μέσω USB</string>
         <string name="usb_charging_summary_head">Ενεργοποίηση/Απενεργοποίηση</string>
 </resources>

@@ -21,7 +21,7 @@ public class RacerPartsStartup extends BroadcastReceiver
 
     private void loadCalData() {
         try {
-            FileInputStream fis = new FileInputStream("/system/etc/pointercal");
+            FileInputStream fis = new FileInputStream("/data/system/pointercal");
             BufferedReader buf = new BufferedReader(new InputStreamReader(fis));
 	    String readString = new String();
 	    if ((readString = buf.readLine()) != null) {
@@ -76,13 +76,8 @@ public class RacerPartsStartup extends BroadcastReceiver
         }
         // Gesture emulation
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
-        writeValue("/sys/module/msm_ts/parameters/tscal_gesture_pressure", Integer.parseInt(prefs.getString("gesture_pressure", "1200")));
-        writeValue("/sys/module/msm_ts/parameters/tscal_gesture_blindspot", Integer.parseInt(prefs.getString("gesture_blindspot", "100")));
-        // Pinch zoom
-        if(prefs.getBoolean("ts_zoomhack", true))
-            writeValue("/sys/module/msm_ts/parameters/zoomhack_enabled", 1);
-        else
-            writeValue("/sys/module/msm_ts/parameters/zoomhack_enabled", 0);
+        writeValue("/sys/module/msm_ts/parameters/tscal_gesture_pressure", Integer.parseInt(prefs.getString("gesture_pressure", "1375")));
+        writeValue("/sys/module/msm_ts/parameters/tscal_gesture_blindspot", Integer.parseInt(prefs.getString("gesture_blindspot", "30")));
         // USB charging
         if(prefs.getBoolean("usb_charging", true))
             writeValue("/sys/module/msm_battery/parameters/usb_chg_enable", 1);

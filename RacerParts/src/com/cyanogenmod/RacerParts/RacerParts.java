@@ -39,13 +39,8 @@ public class RacerParts extends PreferenceActivity {
         super.onPause();
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         // Gestures
-        writeValue("/sys/module/msm_ts/parameters/tscal_gesture_pressure", Integer.parseInt(prefs.getString("gesture_pressure", "1200")));
-        writeValue("/sys/module/msm_ts/parameters/tscal_gesture_blindspot", Integer.parseInt(prefs.getString("gesture_blindspot", "100")));
-        // Pinch zoom
-        if(prefs.getBoolean("ts_zoomhack", true))
-            writeValue("/sys/module/msm_ts/parameters/zoomhack_enabled", 1);
-        else
-            writeValue("/sys/module/msm_ts/parameters/zoomhack_enabled", 0);
+        writeValue("/sys/module/msm_ts/parameters/tscal_gesture_pressure", Integer.parseInt(prefs.getString("gesture_pressure", "1375")));
+        writeValue("/sys/module/msm_ts/parameters/tscal_gesture_blindspot", Integer.parseInt(prefs.getString("gesture_blindspot", "30")));
         // USB charging
         if(prefs.getBoolean("usb_charging", true))
             writeValue("/sys/module/msm_battery/parameters/usb_chg_enable", 1);

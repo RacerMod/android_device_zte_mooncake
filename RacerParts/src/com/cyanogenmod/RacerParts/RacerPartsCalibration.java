@@ -83,23 +83,23 @@ public class RacerPartsCalibration extends Activity {
                         step = 3;
                 } else {
                     int distx = rawx2 - rawx1;
-                    int new_xscale = (380*65536 + distx/2)/distx;
+                    int new_xscale = (140*65536 + distx/2)/distx;
                     int disty = rawy2 - rawy1;
-                    int new_yscale = (700*65536 + disty/2)/disty;
+                    int new_yscale = (220*65536 + disty/2)/disty;
                     int new_xoffset = 1;
                     new_xoffset += 50*65536-rawx1*new_xscale;
-                    new_xoffset += 430*65536-rawx2*new_xscale;
+                    new_xoffset += 190*65536-rawx2*new_xscale;
                     new_xoffset /= 2;
                     int new_yoffset = 1;
                     new_yoffset += 50*65536-rawy1*new_yscale;
-                    new_yoffset += 750*65536-rawy2*new_yscale;
+                    new_yoffset += 270*65536-rawy2*new_yscale;
                     new_yoffset /= 2;
                     // Pass new calibration to kernel
                     writeValue("xoffset", new_xoffset);
                     writeValue("yoffset", new_yoffset);
                     writeValue("xscale", new_xscale);
                     writeValue("yscale", new_yscale);
-                    // Save calibraiton data to /data/system/pointercal
+                    // Save calibration data to /data/system/pointercal
                     StringBuilder sb = new StringBuilder();
                     sb.append(new_xscale);
                     sb.append(" ");
@@ -138,9 +138,9 @@ public class RacerPartsCalibration extends Activity {
                 if(step==1)
                     drawTarget(canvas, 50, 50);
                 else if(step==2)
-                    drawTarget(canvas, 430, 750);
+                    drawTarget(canvas, 190, 270);
                 else
-                    drawTarget(canvas, 240, 400);
+                    drawTarget(canvas, 120, 160);
             }
 
             private void drawTarget(Canvas c, int x, int y) {

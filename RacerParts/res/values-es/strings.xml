@@ -11,9 +11,6 @@
         <string name="gesture_blindspot_title_head">Punto ciego de gestos</string>
         <string name="gesture_blindspot_summary_head">Punto ciego entre un toque y la emulación de gestos</string>
 
-        <string name="ts_zoomhack_title_head">Pinch Zoom</string>
-        <string name="ts_zoomhack_summary_head">Habilitar/Deshabilitar pinch zoom</string>
-
         <string name="usb_charging_title_head">Carga vía USB</string>
         <string name="usb_charging_summary_head">Habilitar/Deshabilitar carga vía USB</string>
 </resources>

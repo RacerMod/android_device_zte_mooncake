@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-        <string name="app_name">ZTE V9／Light 設定</string>
+        <string name="app_name">ZTE Racer 設定</string>
 
         <string name="screen_calibration_title_head">螢幕校準</string>
         <string name="screen_calibration_summary_head">校準觸控螢幕</string>
