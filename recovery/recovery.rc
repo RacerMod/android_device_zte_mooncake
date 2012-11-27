@@ -2,8 +2,8 @@ on early-init
     start ueventd
 
 # Setup android gadget
-   write /sys/module/g_android/parameters/serial_number CWM-Racer
-   write /sys/module/g_android/parameters/product_id 0x1354
+    write /sys/module/g_android/parameters/serial_number CWM-Racer
+    write /sys/module/g_android/parameters/product_id 0x1354
 
 on init
     export PATH /sbin

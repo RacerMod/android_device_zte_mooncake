@@ -52,4 +52,3 @@ bool ril_timer_delete(struct ril_event * ev);
 
 // Event loop
 void ril_event_loop();
-

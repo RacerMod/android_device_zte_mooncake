@@ -2,7 +2,6 @@ package com.cyanogenmod.RacerParts;
 
 import com.cyanogenmod.RacerParts.R;
 
-
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
@@ -16,15 +15,14 @@ public class RacerParts extends PreferenceActivity {
         addPreferencesFromResource(R.xml.racerparts);
     }
 
-   @Override
-   public void onPause() {
-      super.onPause();
-      try {
-		Utils.updateSettings(PreferenceManager.getDefaultSharedPreferences(getBaseContext()));
-	  } catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-	  }
-		      
-   }
+    @Override
+    public void onPause() {
+        super.onPause();
+        try {
+            Utils.updateSettings(PreferenceManager.getDefaultSharedPreferences(getBaseContext()));
+            } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+            }
+    }
 }
