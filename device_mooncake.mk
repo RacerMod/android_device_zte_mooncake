@@ -34,6 +34,8 @@ PRODUCT_PACKAGES += \
     RacerParts \
     dexpreopt
 
+include device/zte/mooncake/BoardConfig.mk
+
 # proprietary side of the device
 $(call inherit-product-if-exists, vendor/zte/mooncake/mooncake-vendor.mk)
 
@@ -48,8 +50,17 @@ PRODUCT_COPY_FILES += \
     device/zte/mooncake/prebuilt/etc/vold.fstab:system/etc/vold.fstab
 
 # Init
+ifeq ($(SENSORS_COMPASS_AK8973),true)
 PRODUCT_COPY_FILES += \
-    device/zte/mooncake/prebuilt/init.mooncake.rc:root/init.mooncake.rc \
+    device/zte/mooncake/prebuilt/init.mooncake.rc:root/init.mooncake.rc
+else
+ifeq ($(SENSORS_COMPASS_AK8962),true)
+PRODUCT_COPY_FILES += \
+    device/zte/mooncake/prebuilt/init.mooncakec.rc:root/init.mooncake.rc
+endif # SENSORS_COMPASS_AK8962
+endif # SENSORS_COMPASS_AK8973
+
+PRODUCT_COPY_FILES += \
     device/zte/mooncake/prebuilt/ueventd.mooncake.rc:root/ueventd.mooncake.rc
 
 # Audio + Media profiles

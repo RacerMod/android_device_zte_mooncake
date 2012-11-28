@@ -50,6 +50,9 @@ BOARD_CUSTOM_USB_CONTROLLER := ../../device/zte/mooncake/UsbController.cpp
 
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
+SENSORS_COMPASS_AK8973 := true
+SENSORS_COMPASS_AK8962 := false
+
 BOARD_KERNEL_BASE := 0x02600000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=mooncake console=null
 
