@@ -7,8 +7,8 @@
         android:title="@string/screen_calibration_title_head"
         android:summary="@string/screen_calibration_summary_head">
         <intent android:action="android.intent.action.MAIN"
-            android:targetPackage="com.cyanogenmod.RacerParts"
-            android:targetClass="com.cyanogenmod.RacerParts.RacerPartsCalibration" />
+            android:targetPackage="com.cyanogenmod.settings.device"
+            android:targetClass="com.cyanogenmod.settings.device.RacerPartsCalibration" />
     </PreferenceScreen>
 
     <!-- Gesture emulation tuning -->

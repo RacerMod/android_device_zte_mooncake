@@ -614,10 +614,10 @@ struct SensorType {
 
 static SensorType sensorTypes[] = {
         { "5mp", 2608, 1960, true,  2592, 1944,0x00000fff },
-        { "5mp", 5184, 1944, true,  2592, 1944,0x00000fff }, // actual 5MP mooncake
-        { "5mp", 2560, 1920, true,  2560, 1920,0x00000fff }, //should be 5MP mooncake
+        { "5mp", 5184, 1944, true,  2592, 1944,0x00000fff }, // actual 5MP blade
+        { "5mp", 2560, 1920, true,  2560, 1920,0x00000fff }, //should be 5MP blade
         { "3mp", 2064, 1544, false, 2048, 1536,0x000007ff },
-        { "3mp", 4096, 1536, true, 2048, 1536,0x000007ff }, // 3MP mooncake
+        { "3mp", 4096, 1536, true, 2048, 1536,0x000007ff }, // 3MP blade
         { "2mp", 3200, 1200, false, 1600, 1200,0x000007ff } };
 
 
@@ -852,7 +852,7 @@ void *opencamerafd(void *data) {
  * data will be placed in a buffer from DstSet, and this buffer will be given
  * to surface flinger to display.
  */
-#define NUM_MORE_BUFS 2
+#define NUM_MORE_BUFS 1
 
 QualcommCameraHardware::QualcommCameraHardware()
     : mParameters(),
@@ -914,8 +914,6 @@ QualcommCameraHardware::QualcommCameraHardware()
 
     switch(mCurrentTarget){
         case TARGET_MSM7627:
-            jpegPadding = 8;
-            break;
         case TARGET_QSD8250:
         case TARGET_MSM7630:
             jpegPadding = 0;
@@ -2230,7 +2228,7 @@ bool QualcommCameraHardware::initPreview()
                 (uint32_t)mPreviewHeap->mHeap->base() + mPreviewHeap->mAlignedBufferSize * cnt;
             frames[cnt].y_off = 0;
             frames[cnt].cbcr_off = previewWidth * previewHeight;
-            frames[cnt].path = OUTPUT_TYPE_P; // MSM_FRAME_ENC;
+            frames[cnt].path = MSM_FRAME_ENC;
         }
 
         mFrameThreadWaitLock.lock();
@@ -2238,12 +2236,12 @@ bool QualcommCameraHardware::initPreview()
         pthread_attr_init(&attr);
         pthread_attr_setdetachstate(&attr, PTHREAD_CREATE_DETACHED);
 
-        frame_parms.frame = frames[kPreviewBufferCount - 1];
+        frame_parms.frame = frames[kPreviewBufferCount - 2];
 
         if( mCurrentTarget == TARGET_MSM7630 || mCurrentTarget == TARGET_QSD8250 )
             frame_parms.video_frame =  recordframes[kPreviewBufferCount - 1];
         else
-            frame_parms.video_frame =  frames[kPreviewBufferCount - 1];
+            frame_parms.video_frame =  frames[kPreviewBufferCount - 2];
 
         LOGV ("initpreview before cam_frame thread carete , video frame  buffer=%lu fd=%d y_off=%d cbcr_off=%d \n",
           (unsigned long)frame_parms.video_frame.buffer, frame_parms.video_frame.fd, frame_parms.video_frame.y_off,
