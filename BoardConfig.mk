@@ -19,13 +19,13 @@ TARGET_BOOTLOADER_BOARD_NAME := mooncake
 TARGET_SPECIFIC_HEADER_PATH := device/zte/mooncake/include
 
 # Recovery
-BOARD_CUSTOM_GRAPHICS := ../../../device/zte/mooncake/recovery/graphics.c
-BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/zte/mooncake/recovery/recovery_ui.c
+BOARD_USE_CUSTOM_RECOVERY_FONT := \"../../bootable/recovery/minui/font_7x16.h\"
+BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/zte/mooncake/recovery/recovery_keys.c
 TARGET_RECOVERY_INITRC := device/zte/mooncake/recovery/recovery.rc
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/zte/msm7x27
-TARGET_KERNEL_CONFIG := cyanogen_moonake_defconfig
+TARGET_KERNEL_CONFIG := cyanogen_mooncake_defconfig
 TARGET_PREBUILT_RECOVERY_KERNEL := device/zte/mooncake/recovery/recovery_kernel
 BOARD_KERNEL_BASE := 0x02600000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=mooncake console=null
