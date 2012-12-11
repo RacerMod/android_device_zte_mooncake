@@ -88,16 +88,9 @@ PRODUCT_COPY_FILES += \
     frameworks/base/data/etc/android.hardware.sensor.accelerometer.xml:system/etc/permissions/android.hardware.sensor.accelerometer.xml \
     frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml
 
-# Kernel Modules
-PRODUCT_COPY_FILES += \
-    device/zte/mooncake/prebuilt/wifi/ar6000.ko:system/wifi/ar6000.ko \
-    device/zte/mooncake/prebuilt/lib/modules/2.6.35.7-perf+/cifs.ko:system/lib/modules/2.6.35.7-perf+/cifs.ko \
-    device/zte/mooncake/prebuilt/lib/modules/2.6.35.7-perf+/zram.ko:system/lib/modules/2.6.35.7-perf+/zram.ko \
-    device/zte/mooncake/prebuilt/lib/modules/2.6.35.7-perf+/lzo_compress.ko:system/lib/modules/2.6.35.7-perf+/lzo_compress.ko \
-    device/zte/mooncake/prebuilt/lib/modules/2.6.35.7-perf+/lzo_decompress.ko:system/lib/modules/2.6.35.7-perf+/lzo_decompress.ko
-
 # WiFi firmware
 PRODUCT_COPY_FILES += \
+    device/zte/mooncake/prebuilt/wifi/ar6000.ko:system/wifi/ar6000.ko \
     device/zte/mooncake/prebuilt/wifi/regcode:system/wifi/regcode \
     device/zte/mooncake/prebuilt/wifi/data.patch.hw2_0.bin:system/wifi/data.patch.hw2_0.bin \
     device/zte/mooncake/prebuilt/wifi/athwlan.bin.z77:system/wifi/athwlan.bin.z77 \
