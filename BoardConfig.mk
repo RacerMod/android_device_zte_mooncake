@@ -22,6 +22,7 @@ TARGET_SPECIFIC_HEADER_PATH := device/zte/mooncake/include
 BOARD_USE_CUSTOM_RECOVERY_FONT := \"../../bootable/recovery/minui/font_7x16.h\"
 BOARD_CUSTOM_RECOVERY_KEYMAPPING:= ../../device/zte/mooncake/recovery/recovery_keys.c
 TARGET_RECOVERY_INITRC := device/zte/mooncake/recovery/recovery.rc
+TARGET_RECOVERY_FSTAB := device/zte/mooncake/recovery/recovery.fstab
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/zte/msm7x27

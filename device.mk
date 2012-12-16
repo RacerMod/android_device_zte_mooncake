@@ -77,8 +77,7 @@ PRODUCT_COPY_FILES := \
         device/zte/mooncake/prebuilt/etc/AutoVolumeControl.txt:system/etc/AutoVolumeControl.txt \
         device/zte/mooncake/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
         device/zte/mooncake/prebuilt/etc/start_usb0.sh:system/etc/start_usb0.sh \
-        device/zte/mooncake/prebuilt/etc/gps.conf:system/etc/gps.conf \
-        device/zte/mooncake/releasetools/extras.sh:system/bin/extras.sh
+        device/zte/mooncake/prebuilt/etc/gps.conf:system/etc/gps.conf
 
 # Bluetooth configuration files
 PRODUCT_COPY_FILES += \
@@ -99,13 +98,13 @@ PRODUCT_COPY_FILES += \
 
 # These are the hardware-specific features
 PRODUCT_COPY_FILES += \
-         frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
-         frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
-         frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
-         frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
-         frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
-         frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
-         frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
+        frameworks/base/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
+        frameworks/base/data/etc/android.hardware.camera.flash-autofocus.xml:system/etc/permissions/android.hardware.camera.flash-autofocus.xml \
+        frameworks/base/data/etc/android.hardware.location.gps.xml:system/etc/permissions/android.hardware.location.gps.xml \
+        frameworks/base/data/etc/android.hardware.wifi.xml:system/etc/permissions/android.hardware.wifi.xml \
+        frameworks/base/data/etc/android.hardware.touchscreen.multitouch.xml:system/etc/permissions/android.hardware.touchscreen.multitouch.xml \
+        frameworks/base/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml \
+        frameworks/base/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
 
 $(call inherit-product, frameworks/base/build/phone-hdpi-dalvik-heap.mk)
 $(call inherit-product-if-exists, vendor/zte/mooncake/mooncake-vendor.mk)
