@@ -50,17 +50,8 @@ BOARD_CUSTOM_USB_CONTROLLER := ../../device/zte/mooncake/UsbController.cpp
 
 BOARD_UMS_LUNFILE := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
-SENSORS_COMPASS_AK8973 := true
-SENSORS_COMPASS_AK8962 := false
-
 TARGET_KERNEL_SOURCE := kernel/zte/msm7x27
-ifeq ($(SENSORS_COMPASS_AK8973),true)
 TARGET_KERNEL_CONFIG := cyanogen_mooncake_defconfig
-else
-ifeq ($(SENSORS_COMPASS_AK8962),true)
-TARGET_KERNEL_CONFIG := cyanogen_mooncakec_defconfig
-endif # SENSORS_COMPASS_AK8962
-endif # SENSORS_COMPASS_AK8973
 
 BOARD_KERNEL_BASE := 0x02600000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=mooncake console=null

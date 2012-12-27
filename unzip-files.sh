@@ -16,14 +16,6 @@
 
 DEVICE=mooncake
 
-READ=$(cat BoardConfig.mk | grep "SENSORS_COMPASS_AK8973 := true")
-
-if [ "$READ" = "SENSORS_COMPASS_AK8973 := true" ]; then
-    SENSOR="AKM8973"
-else
-    SENSOR="AKM8962"
-fi
-
 mkdir -p ../../../vendor/zte/$DEVICE/proprietary
 mkdir -p ../../../vendor/zte/$DEVICE/proprietary/bin
 mkdir -p ../../../vendor/zte/$DEVICE/proprietary/etc
@@ -31,16 +23,10 @@ mkdir -p ../../../vendor/zte/$DEVICE/proprietary/etc/firmware
 mkdir -p ../../../vendor/zte/$DEVICE/proprietary/lib
 mkdir -p ../../../vendor/zte/$DEVICE/proprietary/lib/hw
 
-if [ "$SENSOR" = "AKM8973" ]; then
-    unzip -j -o ../../../${DEVICE}_update.zip system/bin/akmd2 -d ../../../vendor/zte/$DEVICE/proprietary/bin/
-    chmod 755 ../../../vendor/zte/$DEVICE/proprietary/bin/akmd2
-else
-    unzip -j -o ../../../${DEVICE}_update.zip system/bin/akmd8962 -d ../../../vendor/zte/$DEVICE/proprietary/bin/
-    chmod 755 ../../../vendor/zte/$DEVICE/proprietary/bin/akmd8962
-fi
-
 unzip -j -o ../../../${DEVICE}_update.zip system/bin/qmuxd -d ../../../vendor/zte/$DEVICE/proprietary/bin/
 chmod 755 ../../../vendor/zte/$DEVICE/proprietary/bin/qmuxd
+unzip -j -o ../../../${DEVICE}_update.zip system/bin/akmd2 -d ../../../vendor/zte/$DEVICE/proprietary/bin/
+chmod 755 ../../../vendor/zte/$DEVICE/proprietary/bin/akmd2
 unzip -j -o ../../../${DEVICE}_update.zip system/bin/hostapd -d ../../../vendor/zte/$DEVICE/proprietary/bin/
 chmod 755 ../../../vendor/zte/$DEVICE/proprietary/bin/hostapd
 unzip -j -o ../../../${DEVICE}_update.zip system/bin/hci_qcomm_init -d ../../../vendor/zte/$DEVICE/proprietary/bin/
@@ -134,22 +120,10 @@ unzip -j -o ../../../${DEVICE}_update.zip system/lib/hw/gralloc.mooncake.so -d .
 
 # All the blobs necessary for mooncake
 
-include device/zte/mooncake/BoardConfig.mk
-
-# AKMD
-ifeq ($(echo $)(SENSORS_COMPASS_AK8973),true)
-PRODUCT_COPY_FILES += \
-    vendor/zte/__DEVICE__/proprietary/bin/akmd2:system/bin/akmd2
-else
-ifeq ($(echo $)(SENSORS_COMPASS_AK8962),true)
-PRODUCT_COPY_FILES += \
-    vendor/zte/__DEVICE__/proprietary/bin/akmd8962:system/bin/akmd8962
-endif # SENSORS_COMPASS_AK8962
-endif # SENSORS_COMPASS_AK8973
-
 # Binary
 PRODUCT_COPY_FILES += \\
     vendor/zte/__DEVICE__/proprietary/bin/qmuxd:system/bin/qmuxd \\
+    vendor/zte/__DEVICE__/proprietary/bin/akmd2:system/bin/akmd2 \\
     vendor/zte/__DEVICE__/proprietary/bin/hostapd:system/bin/hostapd \\
     vendor/zte/__DEVICE__/proprietary/bin/hci_qcomm_init:system/bin/hci_qcomm_init
 
