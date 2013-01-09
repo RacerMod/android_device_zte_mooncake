@@ -20,6 +20,8 @@ on boot
     chown system system /sys/module/msm_ts/parameters/tscal_yoffset
     chown system system /sys/module/msm_ts/parameters/tscal_xscale
     chown system system /sys/module/msm_ts/parameters/tscal_yscale
+    chown system system /sys/module/msm_ts/parameters/tscal_xymix
+    chown system system /sys/module/msm_ts/parameters/tscal_yxmix
     chown system system /sys/module/msm_ts/parameters/tscal_gesture_pressure
     chown system system /sys/module/msm_ts/parameters/tscal_gesture_blindspot
 
