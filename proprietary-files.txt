@@ -1,1 +1,2 @@
-bin/akmd2
+# Accelerometer
+system/bin/akmd2
